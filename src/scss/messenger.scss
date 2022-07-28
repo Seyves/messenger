@@ -1,0 +1,20 @@
+.messenger{
+	min-height: 0px;
+	display: flex;
+}
+
+.gutter{	
+	display: none;
+
+	&:hover{
+		cursor: col-resize;
+	}
+	&::after{
+		content: '';
+		display: block;
+		margin: 0 auto;
+		width: 1px;
+		background-color: lighten($darkColor, 10%);
+		height: 100%;
+	}
+}

@@ -1,0 +1,61 @@
+.add-person{
+
+	&__form{
+		position: relative;
+		display: flex;
+		height: 100%;			
+	}
+	&__search{
+		padding-left: rem(30);
+		background-image: url('./img/magnifyingGlass.svg');
+		background-position: rem(8) rem(7);
+		background-size: rem(15);
+		background-repeat: no-repeat;
+		margin-right: rem(10);
+		height: 100%;			
+	}
+	&__submit{
+
+	}
+	&__tab{		
+		pointer-events: none;
+		transition: all 0.5s ease 0s;
+		transform: translateY(-6%);
+		opacity: 0;
+		top: rem(35);
+		&.active{			
+			pointer-events: all;
+			opacity: 1;
+			transform: translateY(0);
+		}
+		overflow: auto;
+		position: absolute;
+		width: 100%;
+		max-height: rem(500);
+		z-index: 4;
+		border: 1px solid lighten($darkColor, 30%);
+		background-color: lighten($darkColor, 10%);
+	}
+	
+	&__tab-band{
+		.person{
+			width: 100%;
+			transition: all 0.3s ease 0s;
+			&:hover{
+				background-color: $attentionColor;
+			}
+			&__name{
+				font-size: rem(16);
+			}
+			&__sub-info{
+				font-size: rem(12);
+			}
+			&__avatar{
+				width: rem(45);
+				height: rem(45);
+			}
+			cursor: pointer;
+			padding: rem(5) rem(10);
+		}
+	}
+}

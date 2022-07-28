@@ -1,0 +1,47 @@
+.chat{	
+	display: grid;
+	grid-template-rows: rem(70) 1fr auto;
+	flex: 1 1 auto;
+
+	&__header{
+		display: flex;
+		@include adaptiveValue("padding-left", 20, 10);
+		@include adaptiveValue("padding-right", 20, 10);
+
+		align-items: center;
+		border-bottom: 1px solid lighten($darkColor, 10%);
+	}
+
+	&__window{
+		scroll-behavior: smooth;
+		@include adaptiveValue("padding-left", 20, 10);
+		@include adaptiveValue("padding-right", 20, 10);
+		overflow-y: auto;
+		overflow-x: hidden;
+		position: relative;
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	&__band{
+		min-height: 100%;
+		display: flex;
+		justify-content: end;
+		flex-direction: column;
+	}
+
+	&__bottom{
+		padding: rem(10) rem(20);
+	}
+
+	&__form{
+		background-color: lighten($darkColor, 10%);
+		padding: rem(10);
+		display: flex;
+		border-radius: rem(10);
+	}
+	&__input{
+		width: 10px;
+		flex: 1 1 auto;
+	}
+}

@@ -1,0 +1,44 @@
+.message{
+	display: flex;
+	&:not(:last-child){
+		@include adaptiveValue("margin-bottom", 10, 8);
+	}
+
+	&__body{		
+		display: flex;
+		border-radius: rem(7);		
+		max-width: 70%;
+		background-color: lighten($darkColor, 10%);
+		border: 1px solid lighten($darkColor, 20%);
+		@include adaptiveValue("font-size", 16, 14);
+		padding: em(12);
+		padding-bottom: em(4);
+		align-items: end;	
+	}
+
+	&__text{
+		align-self: start;
+		margin-right: rem(12);
+	}
+
+	&__time{
+		font-size: rem(10);
+		color: rgba($mainColor, 0.5);
+		margin-top: em(15);
+	}
+
+	&.receiving{
+		.message__body{
+			border-top-left-radius: 0px;
+		}
+	}
+
+	&.giving{
+		.message__body{
+			border-top-right-radius: 0px;
+			border: none;
+			background-color: $attentionColor;
+		}
+		justify-content: end;
+	}
+}
